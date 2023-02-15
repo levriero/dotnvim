@@ -23,4 +23,8 @@ vim.o.updatetime = 50
 
 if global.is_mac then
 	vim.g.python3_host_prog = os.getenv("HOMEBREW_PREFIX") .. "/bin/python3"
+
+	if vim.fn.executable("volta") == 1 then
+		vim.g.node_host_prog = vim.fn.trim(vim.fn.system("volta which neovim-node-host"))
+	end
 end
