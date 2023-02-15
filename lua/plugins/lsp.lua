@@ -69,7 +69,6 @@ return {
 					on_attach = opts.on_attach
 				})
 			end,
-
 			lua_ls = function()
 				local _opts = {
 					settings = {

@@ -1,7 +1,7 @@
 local global = require("core.global")
 
 local disable_distribution_plugins = function()
-	-- Do not load zipPlugin.vim, gzip.vim and tarPlugin.vim 
+	-- Do not load zipPlugin.vim, gzip.vim and tarPlugin.vim
 	-- (all these plugins are related to checking files inside compressed files)
 	vim.g.loaded_gzip = 1
 	vim.g.loaded_tar = 1
@@ -19,49 +19,49 @@ local disable_distribution_plugins = function()
 end
 
 local map_leader = function()
-  vim.g.mapleader = " "
-  vim.g.maplocalleader = " "
+	vim.g.mapleader = " "
+	vim.g.maplocalleader = " "
 
-  vim.api.nvim_set_keymap("n", " ", "", { noremap = true })
-  vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
+	vim.api.nvim_set_keymap("n", " ", "", { noremap = true })
+	vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
 end
 
 local set_clipboard = function()
-  if global.is_mac then
-    vim.g.clipboard = {
-      name = "macOS-clipboard",
-      copy = { ["+"] = "pbcopy", ["*"] = "pbcopy" },
-      paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
-      cache_enabled = 0,
-    }
-  elseif os.getenv("TMUX") then
-    vim.g.clipboard = {
-      name = "tmux-clipboard",
-      copy = {
-        ["+"] = "tmux set-buffer -w",
-        ["*"] = "tmux set-buffer -w",
-      },
-      paste = {
-        ["+"] = "tmux save-buffer -",
-        ["*"] = "tmux save-buffer -",
-      },
-      cache_enabled = 0,
-    }
-  end
+	if global.is_mac then
+		vim.g.clipboard = {
+			name = "macOS-clipboard",
+			copy = { ["+"] = "pbcopy",["*"] = "pbcopy" },
+			paste = { ["+"] = "pbpaste",["*"] = "pbpaste" },
+			cache_enabled = 0,
+		}
+	elseif os.getenv("TMUX") then
+		vim.g.clipboard = {
+			name = "tmux-clipboard",
+			copy = {
+				["+"] = "tmux set-buffer -w",
+				["*"] = "tmux set-buffer -w",
+			},
+			paste = {
+				["+"] = "tmux save-buffer -",
+				["*"] = "tmux save-buffer -",
+			},
+			cache_enabled = 0,
+		}
+	end
 end
 
 
 local load_core = function()
-  disable_distribution_plugins()
-  map_leader()
-  set_clipboard()
+	disable_distribution_plugins()
+	map_leader()
+	set_clipboard()
 
-  require("core.options")
-  require("core.mappings")
-  require("core.autocommands")
-  require("core.plugins")
+	require("core.options")
+	require("core.mappings")
+	require("core.autocommands")
+	require("core.plugins")
 
-  vim.api.nvim_command("colorscheme catppuccin")
+	vim.api.nvim_command("colorscheme catppuccin")
 end
 
 load_core()

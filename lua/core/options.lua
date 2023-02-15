@@ -22,5 +22,5 @@ vim.o.completeopt = "menuone,noselect"
 vim.o.updatetime = 50
 
 if global.is_mac then
-  vim.g.python3_host_prog = os.getenv("HOMEBREW_PREFIX") .. "/bin/python3"
+	vim.g.python3_host_prog = os.getenv("HOMEBREW_PREFIX") .. "/bin/python3"
 end
