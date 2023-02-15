@@ -26,8 +26,8 @@ return {
 		local config_opts = {
 			mappings = {
 				i = {
-					['<C-u>'] = false,
-					['<C-d>'] = require('telescope.actions').delete_buffer,
+					["<C-u>"] = false,
+					["<C-d>"] = require("telescope.actions").delete_buffer,
 				}
 			}
 		}

@@ -2,8 +2,6 @@ local global = require("core.global")
 local data_dir = global.data_dir
 local Lazy = {}
 
-print(vim.inspect(data_dir))
-
 function Lazy:load_lazy()
   local lazy_path = data_dir .. "/lazy/lazy.nvim"
   local lazy_settings = {
@@ -39,8 +37,6 @@ function Lazy:load_lazy()
   }
 
   if not vim.loop.fs_stat(lazy_path) then
-    local lazy_repo = "https://github.com/folke/lazy.nvim.git"
-
     vim.notify("Cloning plugin manager...")
     vim.fn.system({
       "git",
