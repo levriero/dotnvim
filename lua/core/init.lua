@@ -40,6 +40,8 @@ local load_core = function()
   require("core.mappings")
   require("core.autocommands")
   require("core.plugins")
+
+  vim.api.nvim_command("colorscheme catppuccin")
 end
 
 load_core()
