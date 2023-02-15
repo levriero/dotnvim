@@ -40,8 +40,8 @@ return {
 
 		-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-		
+		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
 		-- Set up mason and ensure servers are installed and configured
 		mason.setup()
 		mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
