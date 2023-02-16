@@ -31,7 +31,7 @@ vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
 -- nvim-tree
 nmap("<leader>e", vim.cmd.NvimTreeFindFileToggle, "[E]xplore Files")
 
--- trouble
+-- Trouble
 nmap("gt", "<Cmd>TroubleToggle<CR>", "LSP: Toggle trouble list")
 nmap("<leader>tr", "<Cmd>TroubleToggle lsp_references<CR>", "LSP: Show LSP references")
 nmap("<leader>td", "<Cmd>TroubleToggle document_diagnostics<CR>", "LSP: Show document diagnostics")
