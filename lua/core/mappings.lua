@@ -24,3 +24,6 @@ nmap("<leader>ws", "<Cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "LSP: [W]
 nmap("K", vim.lsp.buf.hover, "LSP: Hover Documentation") -- see `:help K` for why this keymap
 nmap("<C-k>", vim.lsp.buf.signature_help, "LSP: Signature Documentation")
 nmap("<leader>fm", vim.lsp.buf.format, "LSP: Format current buffer")
+
+-- vim-slash
+vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
