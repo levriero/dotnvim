@@ -56,11 +56,21 @@ local set_clipboard = function()
 	end
 end
 
+local set_host_paths = function()
+	if global.is_mac then
+		vim.g.python3_host_prog = os.getenv("HOMEBREW_PREFIX") .. "/bin/python3"
+
+		if vim.fn.executable("volta") == 1 then
+			vim.g.node_host_prog = vim.fn.trim(vim.fn.system("volta which neovim-node-host"))
+		end
+	end
+end
 
 local load_core = function()
 	disable_distribution_plugins()
 	map_leader()
 	set_clipboard()
+	set_host_paths()
 
 	require("core.options")
 	require("core.mappings")
