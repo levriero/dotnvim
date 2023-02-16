@@ -27,3 +27,6 @@ nmap("<leader>fm", vim.lsp.buf.format, "LSP: Format current buffer")
 
 -- vim-slash
 vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
+
+-- nvim-tree
+nmap("<leader>e", vim.cmd.NvimTreeFindFileToggle, "[E]xplore Files")
