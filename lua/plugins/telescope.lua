@@ -17,6 +17,7 @@ return {
 		{ "<leader>sw",      "<Cmd>Telescope grep_string<CR>", desc = "[S]earch current [W]ord" },
 		{ "<leader>sg",      "<Cmd>Telescope live_grep<CR>",   desc = "[S]earch by [G]rep" },
 		{ "<leader>sd",      "<Cmd>Telescope diagnostics<CR>", desc = "[S]earch [D]iagnostics" },
+		{ "<leader>sc",      "<Cmd>Telescope colorscheme<CR>", desc = "[S]earch [C]olorscheme" },
 	},
 	config = function()
 		-- [[ Configure Telescope ]]
