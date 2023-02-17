@@ -10,7 +10,7 @@ return function()
 	-- Set up Lsp border
 	require("lspconfig.ui.windows").default_options.border = "single"
 
-	--	nvim-cmp supports additional completion capabilities, so broadcast that to servers
+	-- Add additional capabilities supported by nvim-cmp
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
@@ -33,7 +33,7 @@ return function()
 		lsp_map("<leader>D", vim.lsp.buf.type_definition, "Type Definition")
 		lsp_map("<leader>rn", vim.lsp.buf.rename, "Rename")
 		lsp_map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-		lsp_map("<leader>fm", vim.lsp.buf.format, "Format Buffer")
+		lsp_map("<leader>fm", function() vim.lsp.buf.format({ async = true }) end, "Format Buffer")
 		lsp_map("<leader>ds", telescope.lsp_document_symbols, "Document Symbols")
 		lsp_map("<leader>ws", telescope.lsp_dynamic_workspace_symbols, "Workspace Symbols")
 
@@ -51,7 +51,18 @@ return function()
 		})
 	end
 
-	local opts = { on_attach = on_attach, capabilities = capabilities }
+	local border = require("modules.utils").border_highlight("FloatBorder")
+
+	local handlers = {
+		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+	}
+
+	local opts = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		handlers = handlers
+	}
 
 	-- Set up mason
 	mason.setup({
@@ -79,7 +90,8 @@ return function()
 		function(server_name)
 			nvim_lsp[server_name].setup({
 				capabilities = opts.capabilities,
-				on_attach = opts.on_attach
+				on_attach = opts.on_attach,
+				handlers = opts.handlers,
 			})
 		end,
 		lua_ls = function()

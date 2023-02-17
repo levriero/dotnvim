@@ -9,26 +9,13 @@ return function()
 		cmp = require("modules.utils.icons").get("cmp"),
 	}
 
-	local border = function(hl)
-		return {
-			{ "╭", hl },
-			{ "─", hl },
-			{ "╮", hl },
-			{ "│", hl },
-			{ "╯", hl },
-			{ "─", hl },
-			{ "╰", hl },
-			{ "│", hl },
-		}
-	end
-
 	cmp.setup({
 		window = {
 			completion = {
-				border = border("Normal"),
+				border = require("modules.utils").border_highlight("CmpBorder")
 			},
 			documentation = {
-				border = border("CmpDocBorder"),
+				border = require("modules.utils").border_highlight("CmpDocBorder")
 			},
 		},
 		snippet = {

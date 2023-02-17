@@ -32,6 +32,14 @@ return function()
 			telescope = true,
 			treesitter = true,
 			which_key = true,
-		}
+		},
+		highlight_overrides = {
+			all = function(colors)
+				return {
+					CmpBorder = { fg = colors.blue },
+					CmpDocBorder = { fg = colors.flamingo },
+				}
+			end
+		},
 	})
 end
