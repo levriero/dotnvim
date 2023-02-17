@@ -4,17 +4,28 @@ return function()
 	local mason_lspconfig = require("mason-lspconfig")
 	local icons = {
 		ui = require("modules.utils.icons").get("ui", true),
-		misc = require("modules.utils.icons").get("misc", true)
+		misc = require("modules.utils.icons").get("misc", true),
+		diagnostics = require("modules.utils.icons").get("diagnostics", true),
 	}
 
-	-- Set up Lsp border
-	require("lspconfig.ui.windows").default_options.border = "single"
+	-- Change diagnostic symbols in the sign column
+	local signs = {
+		Error = icons.diagnostics.Error,
+		Warn = icons.diagnostics.Warning,
+		Hint = icons.diagnostics.Hint,
+		Info = icons.diagnostics.Information
+	}
+	for type, icon in pairs(signs) do
+		local hl = "DiagnosticSign" .. type
+
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	end
 
 	-- Add additional capabilities supported by nvim-cmp
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-	local on_attach = function(_client, bufnr)
+	local on_attach = function(_, bufnr)
 		local telescope = require("telescope.builtin")
 
 		-- Mappings.
@@ -51,8 +62,8 @@ return function()
 		})
 	end
 
+	-- Border settings
 	local border = require("modules.utils").border_highlight("FloatBorder")
-
 	local handlers = {
 		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
 		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
