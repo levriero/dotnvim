@@ -23,21 +23,45 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+		local on_attach = function(_client, bufnr)
+			local telescope = require("telescope.builtin")
+
+			-- Mappings.
+			local lsp_map = function(keys, func, desc)
+				vim.keymap.set("n", keys, func, { noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. desc })
+			end
+
+			-- See `:help vim.lsp.*` for documentation on any of the below functions
+			lsp_map("K", vim.lsp.buf.hover, "Hover Documentation")
+			lsp_map("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+
+			lsp_map("gd", vim.lsp.buf.definition, "Go to Definition")
+			lsp_map("gI", vim.lsp.buf.implementation, "Go to Implementation")
+			lsp_map("gr", telescope.lsp_references, "Go to References")
+
+			lsp_map("<leader>D", vim.lsp.buf.type_definition, "Type Definition")
+			lsp_map("<leader>rn", vim.lsp.buf.rename, "Rename")
+			lsp_map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+			lsp_map("<leader>fm", vim.lsp.buf.format, "Format Buffer")
+			lsp_map("<leader>ds", telescope.lsp_document_symbols, "Document Symbols")
+			lsp_map("<leader>ws", telescope.lsp_dynamic_workspace_symbols, "Workspace Symbols")
+
+			-- [[ lsp-signature ]]
+			-- see `:h lsp_signature-full_configuration_(with_default_values)`
+			require("lsp_signature").on_attach({
+				bind = true,
+				floating_window = true,
+				fix_pos = true,
+				hint_enable = true,
+				hi_parameter = "LspSignatureActiveParameter",
+				handler_opts = {
+					border = "rounded"
+				},
+			})
+		end
+
 		local opts = {
-			on_attach = function()
-				-- Delegate to lsp_signature
-				-- see `:h lsp_signature-full_configuration_(with_default_values)`
-				require("lsp_signature").on_attach({
-					bind = true,
-					floating_window = true,
-					fix_pos = true,
-					hint_enable = true,
-					hi_parameter = "LspSignatureActiveParameter",
-					handler_opts = {
-						border = "rounded"
-					},
-				})
-			end,
+			on_attach = on_attach,
 			capabilities = capabilities,
 		}
 
