@@ -60,8 +60,8 @@ table.insert(M, {
 	},
 	-- See `:help telescope.builtin`
 	keys = {
-		{ "<leader>?",       "<Cmd>Telescope oldfiles<CR>",    desc = "[?] Find recently opened files" },
-		{ "<leader><space>", "<Cmd>Telescope buffers<CR>",     desc = "[ ] Find existing buffers" },
+		{ "<leader>?",       "<Cmd>Telescope oldfiles<CR>",    desc = "Find recently opened files" },
+		{ "<leader><space>", "<Cmd>Telescope buffers<CR>",     desc = "Find existing buffers" },
 		{ "<leader>sf",      "<Cmd>Telescope find_files<CR>",  desc = "Search Files" },
 		{ "<leader>sh",      "<Cmd>Telescope help_tags<CR>",   desc = "Search Help" },
 		{ "<leader>sw",      "<Cmd>Telescope grep_string<CR>", desc = "Search current Word" },
@@ -74,7 +74,7 @@ table.insert(M, {
 				require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					previewer = false }))
 			end,
-			desc = "[/] Fuzzily search in current buffer"
+			desc = "Fuzzily search in current buffer"
 		},
 	},
 	config = require("plugins.config.telescope")

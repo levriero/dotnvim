@@ -19,7 +19,7 @@ nmap("<leader>-", "<C-w>|", "Maximize current window")
 vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
 
 -- nvim-tree
-nmap("<leader>e", vim.cmd.NvimTreeFindFileToggle, "[E]xplore Files")
+nmap("<leader>e", vim.cmd.NvimTreeFindFileToggle, "Explore Files")
 
 -- Trouble
 nmap("gt", "<Cmd>TroubleToggle<CR>", "LSP: Toggle trouble list")
@@ -29,8 +29,8 @@ nmap("<leader>tw", "<Cmd>TroubleToggle workspace_diagnostics<CR>", "LSP: Show wo
 nmap("<leader>tq", "<Cmd>TroubleToggle quickfix<CR>", "LSP: Show quickfix list")
 
 -- vim-test
-nmap("<leader>tn", vim.cmd.TestNearest, "[T]est [N]earest")
-nmap("<leader>tf", vim.cmd.TestFile, "[T]est [F]ile")
-nmap("<leader>ts", vim.cmd.TestSuite, "[T]est [S]uite")
-nmap("<leader>tl", vim.cmd.TestLast, "[T]est [L]ast")
-nmap("<leader>tv", vim.cmd.TestVisit, "[T]est [V]isit")
+nmap("<leader>tn", vim.cmd.TestNearest, "Test Nearest")
+nmap("<leader>tf", vim.cmd.TestFile, "Test File")
+nmap("<leader>ts", vim.cmd.TestSuite, "Test Suite")
+nmap("<leader>tl", vim.cmd.TestLast, "Test Last")
+nmap("<leader>tv", vim.cmd.TestVisit, "Test Visit")
