@@ -183,7 +183,11 @@ table.insert(M, {
 table.insert(M, {
 	"tpope/vim-fugitive",
 	lazy = true,
-	cmd = { "Git", "G" },
+	cmd = {
+		"G",
+		"Git",
+		"Gread"
+	},
 })
 
 table.insert(M, {
