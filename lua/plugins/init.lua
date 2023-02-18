@@ -227,4 +227,11 @@ table.insert(M, {
 	config = require("plugins.config.which-key")
 })
 
+table.insert(M, {
+	"akinsho/bufferline.nvim",
+	lazy = true,
+	event = { "BufReadPost", "BufAdd", "BufNewFile" },
+	config = require("plugins.config.bufferline"),
+})
+
 return M
