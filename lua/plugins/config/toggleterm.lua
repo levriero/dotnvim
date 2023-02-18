@@ -10,7 +10,7 @@ return function()
 			}
 		},
 		float_opts = {
-			border = "curved"
+			border = "single"
 		}
 	})
 end

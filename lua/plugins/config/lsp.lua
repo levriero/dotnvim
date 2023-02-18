@@ -50,16 +50,18 @@ return function()
 
 		-- [[ lsp-signature ]]
 		-- see `:h lsp_signature-full_configuration_(with_default_values)`
-		require("lsp_signature").on_attach({
+		local signature_setup = {
 			bind = true,
 			floating_window = true,
-			fix_pos = true,
+			fix_pos = false,
 			hint_enable = true,
 			hi_parameter = "LspSignatureActiveParameter",
 			handler_opts = {
-				border = "rounded"
+				border = "single"
 			},
-		})
+		}
+
+		require("lsp_signature").on_attach(signature_setup, bufnr)
 	end
 
 	-- Border settings
@@ -78,7 +80,7 @@ return function()
 	-- Set up mason
 	mason.setup({
 		ui = {
-			border = "rounded",
+			border = "single",
 			icons = {
 				package_pending = icons.ui.Modified_alt,
 				package_installed = icons.ui.Check,

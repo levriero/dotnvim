@@ -12,12 +12,12 @@ return function()
 	cmp.setup({
 		window = {
 			completion = {
-				border = require("modules.utils").border_highlight("CmpBorder"),
+				border = require("modules.utils").border_highlight("CmpBorder", "single"),
 				max_width = 80,
 				max_height = 20,
 			},
 			documentation = {
-				border = require("modules.utils").border_highlight("CmpDocBorder"),
+				border = require("modules.utils").border_highlight("CmpDocBorder", "single"),
 			},
 		},
 		snippet = {

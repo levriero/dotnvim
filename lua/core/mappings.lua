@@ -16,7 +16,7 @@ nmap("<leader>-", "<C-w>|", "Maximize current window")
 -- Mappings can be found in lua/plugins/lsp.lua
 
 -- vim-slash
-vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
+nmap("<Plug>(slash-after)", "zz")
 
 -- nvim-tree
 nmap("<leader>e", "<Cmd>NvimTreeFindFileToggle<CR>", "Explore Files")

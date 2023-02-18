@@ -22,7 +22,7 @@ function Lazy:load_lazy()
 			colorscheme = { "catppuccin" },
 		},
 		ui = {
-			border = "rounded",
+			border = "single",
 			icons = {
 				cmd = icons.misc.Code,
 				config = icons.ui.Gear,
