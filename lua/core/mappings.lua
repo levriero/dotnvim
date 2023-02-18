@@ -1,6 +1,6 @@
 -- Map keys in normal mode
 local nmap = function(keys, func, desc)
-	vim.keymap.set("n", keys, func, { noremap = true, silent = true, nowait = true, desc = desc })
+	vim.api.nvim_set_keymap("n", keys, func, { noremap = true, silent = true, nowait = true, desc = desc })
 end
 
 nmap(";", ":")
@@ -19,7 +19,7 @@ nmap("<leader>-", "<C-w>|", "Maximize current window")
 vim.api.nvim_set_keymap("n", "<Plug>(slash-after)", "zz", {})
 
 -- nvim-tree
-nmap("<leader>e", vim.cmd.NvimTreeFindFileToggle, "Explore Files")
+nmap("<leader>e", "<Cmd>NvimTreeFindFileToggle<CR>", "Explore Files")
 
 -- Trouble
 nmap("gt", "<Cmd>TroubleToggle<CR>", "LSP: Toggle trouble list")
@@ -29,8 +29,8 @@ nmap("<leader>tw", "<Cmd>TroubleToggle workspace_diagnostics<CR>", "LSP: Show wo
 nmap("<leader>tq", "<Cmd>TroubleToggle quickfix<CR>", "LSP: Show quickfix list")
 
 -- vim-test
-nmap("<leader>tn", vim.cmd.TestNearest, "Test Nearest")
-nmap("<leader>tf", vim.cmd.TestFile, "Test File")
-nmap("<leader>ts", vim.cmd.TestSuite, "Test Suite")
-nmap("<leader>tl", vim.cmd.TestLast, "Test Last")
-nmap("<leader>tv", vim.cmd.TestVisit, "Test Visit")
+nmap("<leader>tn", "<Cmd>TestNearest<CR>", "Test Nearest")
+nmap("<leader>tf", "<Cmd>TestFile<CR>", "Test File")
+nmap("<leader>ts", "<Cmd>TestSuite<CR>", "Test Suite")
+nmap("<leader>tl", "<Cmd>TestLast<CR>", "Test Last")
+nmap("<leader>tv", "<Cmd>TestVisit<CR>", "Test Visit")
