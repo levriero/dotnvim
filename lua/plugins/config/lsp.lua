@@ -51,11 +51,8 @@ return function()
 		-- [[ lsp-signature ]]
 		-- see `:h lsp_signature-full_configuration_(with_default_values)`
 		local signature_setup = {
-			bind = true,
 			floating_window = true,
-			fix_pos = false,
-			hint_enable = true,
-			hi_parameter = "LspSignatureActiveParameter",
+			floating_window_above_cur_line = false,
 			handler_opts = {
 				border = "single"
 			},
@@ -65,7 +62,7 @@ return function()
 	end
 
 	-- Border settings
-	local border = require("modules.utils").border_highlight("FloatBorder")
+	local border = require("modules.utils").border_highlight("FloatBorder", "single")
 	local handlers = {
 		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
 		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
