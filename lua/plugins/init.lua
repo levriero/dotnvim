@@ -8,7 +8,6 @@ table.insert(M, {
 
 table.insert(M, {
 	"neovim/nvim-lspconfig",
-	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason.nvim",
@@ -20,7 +19,6 @@ table.insert(M, {
 
 table.insert(M, {
 	"hrsh7th/nvim-cmp",
-	lazy = true,
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -41,7 +39,6 @@ table.insert(M, {
 
 table.insert(M, {
 	"nvim-treesitter/nvim-treesitter",
-	lazy = true,
 	build = ":TSUpdate",
 	event = { "CursorHold", "CursorHoldI" },
 	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -50,7 +47,6 @@ table.insert(M, {
 
 table.insert(M, {
 	"nvim-telescope/telescope.nvim",
-	lazy = true,
 	cmd = "Telescope",
 	branch = "0.1.x",
 	dependencies = {
@@ -82,35 +78,34 @@ table.insert(M, {
 
 table.insert(M, {
 	"rcarriga/nvim-notify",
-	lazy = true,
 	event = "VeryLazy",
 	config = require("plugins.config.nvim-notify")
 })
 
 table.insert(M, {
 	"numToStr/Comment.nvim",
-	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },
-	config = require("plugins.config.comment")
+	config = true
 })
 
 table.insert(M, {
 	"lukas-reineke/indent-blankline.nvim",
-	lazy = true,
 	event = "BufReadPost",
 	config = require("plugins.config.indent-blankline")
 })
 
 table.insert(M, {
 	"j-hui/fidget.nvim",
-	lazy = true,
 	event = "BufReadPost",
-	config = require("plugins.config.fidget")
+	opts = {
+		window = {
+			blend = 0
+		},
+	}
 })
 
 table.insert(M, {
 	"nvim-tree/nvim-tree.lua",
-	lazy = true,
 	cmd = {
 		"NvimTreeToggle",
 		"NvimTreeOpen",
@@ -123,21 +118,18 @@ table.insert(M, {
 
 table.insert(M, {
 	"goolord/alpha-nvim",
-	lazy = true,
 	event = "BufWinEnter",
 	config = require("plugins.config.alpha")
 })
 
 table.insert(M, {
 	"lewis6991/gitsigns.nvim",
-	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("plugins.config.gitsigns")
 })
 
 table.insert(M, {
 	"ggandor/leap.nvim",
-	lazy = true,
 	event = "BufReadPost",
 	dependencies = { "tpope/vim-repeat" },
 	config = require("plugins.config.leap")
@@ -145,14 +137,12 @@ table.insert(M, {
 
 table.insert(M, {
 	"nvim-lualine/lualine.nvim",
-	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("plugins.config.lualine")
 })
 
 table.insert(M, {
 	"akinsho/toggleterm.nvim",
-	lazy = true,
 	cmd = {
 		"ToggleTerm",
 		"ToggleTermSetName",
@@ -175,14 +165,12 @@ table.insert(M, {
 
 table.insert(M, {
 	"ibhagwan/smartyank.nvim",
-	lazy = true,
 	event = "BufReadPost",
 	config = require("plugins.config.smartyank")
 })
 
 table.insert(M, {
 	"tpope/vim-fugitive",
-	lazy = true,
 	cmd = {
 		"G",
 		"Git",
@@ -192,13 +180,11 @@ table.insert(M, {
 
 table.insert(M, {
 	"junegunn/vim-slash",
-	lazy = true,
 	event = { "CursorMoved", "InsertEnter" },
 })
 
 table.insert(M, {
 	"vim-test/vim-test",
-	lazy = true,
 	cmd = {
 		"TestNearest",
 		"TestFile",
@@ -211,7 +197,6 @@ table.insert(M, {
 
 table.insert(M, {
 	"folke/trouble.nvim",
-	lazy = true,
 	cmd = {
 		"Trouble",
 		"TroubleToggle",
@@ -222,14 +207,12 @@ table.insert(M, {
 
 table.insert(M, {
 	"folke/which-key.nvim",
-	lazy = true,
 	event = "VeryLazy",
 	config = require("plugins.config.which-key")
 })
 
 table.insert(M, {
 	"akinsho/bufferline.nvim",
-	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("plugins.config.bufferline"),
 })

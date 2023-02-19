@@ -5,8 +5,9 @@ return function()
 		ensure_installed = {
 			"bash",
 			"c",
+			"diff",
+			"fish",
 			"go",
-			"gomod",
 			"help",
 			"html",
 			"javascript",
@@ -27,7 +28,7 @@ return function()
 			-- `false` will disable the whole extension
 			enable = true,
 
-			disable = function(lang, buf)
+			disable = function(_, buf)
 				-- Disable for large files
 				local max_filesize = 100 * 1024 -- 100 KB
 				local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
