@@ -217,4 +217,15 @@ table.insert(M, {
 	config = require("plugins.config.bufferline"),
 })
 
+table.insert(M, {
+	"folke/zen-mode.nvim",
+	cmd = "ZenMode",
+	opts = {
+		plugins = {
+			gitsigns = true,
+		}
+	},
+	keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+})
+
 return M
