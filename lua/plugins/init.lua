@@ -170,15 +170,6 @@ table.insert(M, {
 })
 
 table.insert(M, {
-	"tpope/vim-fugitive",
-	cmd = {
-		"G",
-		"Git",
-		"Gread"
-	},
-})
-
-table.insert(M, {
 	"junegunn/vim-slash",
 	event = { "CursorMoved", "InsertEnter" },
 })
@@ -226,6 +217,12 @@ table.insert(M, {
 		}
 	},
 	keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+})
+
+table.insert(M, {
+	"sindrets/diffview.nvim",
+	cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+	config = true
 })
 
 return M
