@@ -54,7 +54,10 @@ table.insert(M, {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	event = { "CursorHold", "CursorHoldI" },
-	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		"RRethy/nvim-treesitter-endwise"
+	},
 	config = require("plugins.config.treesitter")
 })
 

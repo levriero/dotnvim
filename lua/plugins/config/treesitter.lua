@@ -44,7 +44,13 @@ return function()
 			-- Instead of true it can also be a list of languages
 			additional_vim_regex_highlighting = false,
 		},
-		indent = { enable = true, disable = { "python" } },
+		indent = {
+			enable = true,
+			disable = { "python" }
+		},
+		endwise = {
+			enable = true,
+		},
 		textobjects = {
 			select = {
 				enable = true,
