@@ -16,14 +16,6 @@ return function()
 			diagnostics_indicator = function(count)
 				return "(" .. count .. ")"
 			end,
-			offsets = {
-				{
-					filetype = "NvimTree",
-					text = "File Explorer",
-					text_align = "left",
-					padding = 1
-				}
-			}
 		},
 		highlights = require("catppuccin.groups.integrations.bufferline").get()
 	})
