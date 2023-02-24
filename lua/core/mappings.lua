@@ -3,14 +3,23 @@ local nmap = function(keys, func, desc)
 	vim.api.nvim_set_keymap("n", keys, func, { noremap = true, silent = true, nowait = true, desc = desc })
 end
 
+-- Command
 nmap(";", ":")
 nmap(":", ";")
 
+-- Windows
+nmap("<leader>-", "<C-W>s", "Split window horizonally")
+nmap("<leader>\\", "<C-W>v", "Split window vertically")
+nmap("<leader>=", "<C-w>=", "Make all windows equal")
+
+-- Buffers
 nmap("<tab>", "<C-w>w")
 nmap("<S-tab>", "<C-w>W")
 
-nmap("<leader>=", "<C-w>=", "Make all windows equal")
-nmap("<leader>-", "<C-w>|", "Maximize current window")
+-- Bufferline
+nmap("[b", "<cmd>BufferLineCyclePrev<cr>", "Prev buffer")
+nmap("]b", "<cmd>BufferLineCycleNext<cr>", "Next buffer")
+
 
 -- LSP
 -- Mappings can be found in lua/plugins/lsp.lua

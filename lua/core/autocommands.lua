@@ -22,7 +22,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function()
 		local buf_client = vim.lsp.buf_get_clients()[1]
 
-
 		if buf_client ~= nil and buf_client.server_capabilities.documentFormattingProvider then
 			vim.lsp.buf.format()
 		end
