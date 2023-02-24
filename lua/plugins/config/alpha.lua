@@ -92,7 +92,7 @@ return function()
 			silent = true,
 			nowait = true,
 			callback = function()
-				vim.api.nvim_command("NvimTreeToggle")
+				vim.api.nvim_command("Neotree")
 			end,
 		}),
 		button("space s c", " Change colorscheme", leader, nil, {
