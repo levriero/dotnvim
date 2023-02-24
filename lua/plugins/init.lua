@@ -235,7 +235,17 @@ table.insert(M, { "MunifTanjim/nui.nvim" })
 
 table.insert(M, {
 	"nvim-neo-tree/neo-tree.nvim",
-	cmd = { "Neotree", "NeoTreeFloatToggle" },
+	cmd = "Neotree",
+	init = function()
+		-- remove the deprecated commands from v1.x
+		vim.g.neo_tree_remove_legacy_commands = 1
+	end,
+	opts = {
+		popup_border_style = 'single',
+		filesystem = {
+			follow_current_file = true
+		}
+	}
 })
 
 table.insert(M, {
@@ -243,13 +253,13 @@ table.insert(M, {
 	cmd = { "TodoTrouble", "TodoTelescope" },
 	event = { "BufReadPost", "BufNewFile" },
 	config = true,
-  keys = {
-    { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
-    { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
-    { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
-    { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
-    { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
-  },
+	keys = {
+		{ "]t",         function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+		{ "[t",         function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+		{ "<leader>xt", "<cmd>TodoTrouble<cr>",                              desc = "Todo (Trouble)" },
+		{ "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>",      desc = "Todo/Fix/Fixme (Trouble)" },
+		{ "<leader>st", "<cmd>TodoTelescope<cr>",                            desc = "Todo" },
+	},
 })
 
 return M

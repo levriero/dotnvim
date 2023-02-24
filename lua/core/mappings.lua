@@ -20,7 +20,6 @@ nmap("<S-tab>", "<C-w>W")
 nmap("[b", "<cmd>BufferLineCyclePrev<cr>", "Prev buffer")
 nmap("]b", "<cmd>BufferLineCycleNext<cr>", "Next buffer")
 
-
 -- LSP
 -- Mappings can be found in lua/plugins/lsp.lua
 
@@ -41,4 +40,4 @@ nmap("<leader>tl", "<Cmd>TestLast<CR>", "Test Last")
 nmap("<leader>tv", "<Cmd>TestVisit<CR>", "Test Visit")
 
 -- Neotree
-nmap("<leader>e", "<Cmd>NeoTreeFloatToggle<CR>", "Toggle Neotree in floating window")
+nmap("<leader>e", "<Cmd>Neotree float reveal<cr>", "Toggle Neotree in floating window")
