@@ -7,8 +7,8 @@ table.insert(M, {
 	config = require("plugins.config.catppuccin")
 })
 
-table.insert(M, { "rose-pine/neovim", name = "rose-pine" })
 table.insert(M, { "ellisonleao/gruvbox.nvim", })
+table.insert(M, { "folke/tokyonight.nvim" })
 
 table.insert(M, {
 	"folke/styler.nvim",
