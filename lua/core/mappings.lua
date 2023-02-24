@@ -19,11 +19,10 @@ nmap("<leader>-", "<C-w>|", "Maximize current window")
 nmap("<Plug>(slash-after)", "zz")
 
 -- Trouble
-nmap("gt", "<Cmd>TroubleToggle<CR>", "LSP: Toggle trouble list")
-nmap("<leader>tr", "<Cmd>TroubleToggle lsp_references<CR>", "LSP: Show LSP references")
-nmap("<leader>td", "<Cmd>TroubleToggle document_diagnostics<CR>", "LSP: Show document diagnostics")
-nmap("<leader>tw", "<Cmd>TroubleToggle workspace_diagnostics<CR>", "LSP: Show workspace diagnostics")
-nmap("<leader>tq", "<Cmd>TroubleToggle quickfix<CR>", "LSP: Show quickfix list")
+nmap("<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)")
+nmap("<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)")
+nmap("<leader>xL", "<cmd>TroubleToggle loclist<cr>", "Location List (Trouble)")
+nmap("<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)")
 
 -- vim-test
 nmap("<leader>tn", "<Cmd>TestNearest<CR>", "Test Nearest")

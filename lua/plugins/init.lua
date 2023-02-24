@@ -195,10 +195,11 @@ table.insert(M, {
 	"folke/trouble.nvim",
 	cmd = {
 		"Trouble",
-		"TroubleToggle",
-		"TroubleRefresh"
+		"TroubleToggle"
 	},
-	config = require("plugins.config.trouble")
+	opts = {
+		use_diagnostic_signs = true
+	},
 })
 
 table.insert(M, {
