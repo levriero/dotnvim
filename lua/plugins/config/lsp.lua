@@ -8,6 +8,13 @@ return function()
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
 	}
 
+	-- Configure diagnostics globally
+	-- See `:help vim.diagnostic.config`
+	vim.diagnostic.config({
+		virtual_text = { spacing = 4, prefix = "●" },
+		severity_sort = true,
+	})
+
 	-- Change diagnostic symbols in the sign column
 	local signs = {
 		Error = icons.diagnostics.Error,
