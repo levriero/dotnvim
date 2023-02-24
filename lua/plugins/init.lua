@@ -236,9 +236,20 @@ table.insert(M, { "MunifTanjim/nui.nvim" })
 table.insert(M, {
 	"nvim-neo-tree/neo-tree.nvim",
 	cmd = { "Neotree", "NeoTreeFloatToggle" },
-	keys = {
-		{ "<leader>e", "<Cmd>NeoTreeFloatToggle<CR>", desc = "Toggle Neotree in floating window" }
-	}
+})
+
+table.insert(M, {
+	"folke/todo-comments.nvim",
+	cmd = { "TodoTrouble", "TodoTelescope" },
+	event = { "BufReadPost", "BufNewFile" },
+	config = true,
+  keys = {
+    { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+    { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+    { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
+    { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
+    { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+  },
 })
 
 return M

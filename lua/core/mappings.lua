@@ -30,3 +30,6 @@ nmap("<leader>tf", "<Cmd>TestFile<CR>", "Test File")
 nmap("<leader>ts", "<Cmd>TestSuite<CR>", "Test Suite")
 nmap("<leader>tl", "<Cmd>TestLast<CR>", "Test Last")
 nmap("<leader>tv", "<Cmd>TestVisit<CR>", "Test Visit")
+
+-- Neotree
+nmap("<leader>e", "<Cmd>NeoTreeFloatToggle<CR>", "Toggle Neotree in floating window")
