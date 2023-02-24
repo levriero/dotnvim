@@ -26,7 +26,6 @@ end
 
 local map_leader = function()
 	vim.g.mapleader = " "
-	vim.g.maplocalleader = " "
 
 	vim.api.nvim_set_keymap("n", " ", "", { noremap = true })
 	vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
@@ -77,6 +76,7 @@ local load_core = function()
 	require("core.autocommands")
 	require("core.plugins")
 
+	vim.api.nvim_command("set background=dark")
 	vim.api.nvim_command("colorscheme catppuccin")
 end
 
