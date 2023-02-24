@@ -18,9 +18,6 @@ nmap("<leader>-", "<C-w>|", "Maximize current window")
 -- vim-slash
 nmap("<Plug>(slash-after)", "zz")
 
--- nvim-tree
-nmap("<leader>e", "<Cmd>NvimTreeFindFileToggle<CR>", "Explore Files")
-
 -- Trouble
 nmap("gt", "<Cmd>TroubleToggle<CR>", "LSP: Toggle trouble list")
 nmap("<leader>tr", "<Cmd>TroubleToggle lsp_references<CR>", "LSP: Show LSP references")

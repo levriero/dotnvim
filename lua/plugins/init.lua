@@ -2,6 +2,7 @@ local M = {}
 
 table.insert(M, {
 	"catppuccin/nvim",
+	name = "catppuccin",
 	lazy = false,
 	config = require("plugins.config.catppuccin")
 })
@@ -121,18 +122,6 @@ table.insert(M, {
 })
 
 table.insert(M, {
-	"nvim-tree/nvim-tree.lua",
-	cmd = {
-		"NvimTreeToggle",
-		"NvimTreeOpen",
-		"NvimTreeFindFile",
-		"NvimTreeFindFileToggle",
-		"NvimTreeRefresh",
-	},
-	config = require("plugins.config.nvim-tree")
-})
-
-table.insert(M, {
 	"goolord/alpha-nvim",
 	event = "BufWinEnter",
 	config = require("plugins.config.alpha")
@@ -239,6 +228,16 @@ table.insert(M, {
 	"sindrets/diffview.nvim",
 	cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 	config = true
+})
+
+table.insert(M, { "MunifTanjim/nui.nvim" })
+
+table.insert(M, {
+	"nvim-neo-tree/neo-tree.nvim",
+	cmd = { "Neotree", "NeoTreeFloatToggle" },
+	keys = {
+		{ "<leader>e", "<Cmd>NeoTreeFloatToggle<CR>", desc = "Toggle Neotree in floating window" }
+	}
 })
 
 return M
