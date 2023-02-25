@@ -16,10 +16,6 @@ nmap("<leader>=", "<C-w>=", "Make all windows equal")
 nmap("<tab>", "<C-w>w")
 nmap("<S-tab>", "<C-w>W")
 
--- Bufferline
-nmap("[b", "<cmd>BufferLineCyclePrev<cr>", "Prev buffer")
-nmap("]b", "<cmd>BufferLineCycleNext<cr>", "Next buffer")
-
 -- LSP
 -- Mappings can be found in lua/plugins/lsp.lua
 

@@ -209,12 +209,6 @@ table.insert(M, {
 })
 
 table.insert(M, {
-	"akinsho/bufferline.nvim",
-	event = { "BufReadPost", "BufAdd", "BufNewFile" },
-	config = require("plugins.config.bufferline"),
-})
-
-table.insert(M, {
 	"folke/zen-mode.nvim",
 	cmd = "ZenMode",
 	opts = {
