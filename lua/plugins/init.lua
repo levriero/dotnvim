@@ -11,16 +11,6 @@ table.insert(M, { "ellisonleao/gruvbox.nvim", })
 table.insert(M, { "folke/tokyonight.nvim" })
 
 table.insert(M, {
-	"folke/styler.nvim",
-	event = "VeryLazy",
-	opts = {
-		themes = {
-			markdown = { colorscheme = "gruvbox" },
-		},
-	},
-})
-
-table.insert(M, {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	dependencies = {
