@@ -21,3 +21,5 @@ vim.o.updatetime = 50
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+
+vim.o.laststatus = 3
