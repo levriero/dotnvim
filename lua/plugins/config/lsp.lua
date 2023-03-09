@@ -28,6 +28,21 @@ return function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 	end
 
+	local diagnostic_goto = function(direction, severity)
+		local go_to
+		severity = severity and vim.diagnostic.severity[severity] or nil
+
+		if direction == "next" then
+			go_to = vim.diagnostic.goto_next
+		else
+			go_to = vim.diagnostic.goto_prev
+		end
+
+		return function()
+			go_to({ severity = severity })
+		end
+	end
+
 	-- Add additional capabilities supported by nvim-cmp
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -54,6 +69,13 @@ return function()
 		lsp_map("<leader>fm", function() vim.lsp.buf.format({ async = true }) end, "Format Buffer")
 		lsp_map("<leader>ds", telescope.lsp_document_symbols, "Document Symbols")
 		lsp_map("<leader>ws", telescope.lsp_dynamic_workspace_symbols, "Workspace Symbols")
+
+		lsp_map("]d", diagnostic_goto("next"), "Next Diagnostic")
+		lsp_map("[d", diagnostic_goto("prev"), "Prev Diagnostic")
+		lsp_map("]e", diagnostic_goto("next", "ERROR"), "Next Error")
+		lsp_map("[e", diagnostic_goto("prev", "ERROR"), "Prev Erorr")
+		lsp_map("]w", diagnostic_goto("next", "WARN"), "Next Warning")
+		lsp_map("[w", diagnostic_goto("prev", "WARN"), "Prev Warning")
 
 		-- [[ lsp-signature ]]
 		-- see `:h lsp_signature-full_configuration_(with_default_values)`
