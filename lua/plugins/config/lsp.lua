@@ -76,18 +76,6 @@ return function()
 		lsp_map("[e", diagnostic_goto("prev", "ERROR"), "Prev Erorr")
 		lsp_map("]w", diagnostic_goto("next", "WARN"), "Next Warning")
 		lsp_map("[w", diagnostic_goto("prev", "WARN"), "Prev Warning")
-
-		-- [[ lsp-signature ]]
-		-- see `:h lsp_signature-full_configuration_(with_default_values)`
-		local signature_setup = {
-			floating_window = true,
-			floating_window_above_cur_line = false,
-			handler_opts = {
-				border = "single"
-			},
-		}
-
-		require("lsp_signature").on_attach(signature_setup, bufnr)
 	end
 
 	-- Border settings
