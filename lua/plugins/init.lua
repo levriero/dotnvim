@@ -71,14 +71,15 @@ table.insert(M, {
 	},
 	-- See `:help telescope.builtin`
 	keys = {
-		{ "<leader>?",       "<Cmd>Telescope oldfiles<CR>",    desc = "Find recently opened files" },
-		{ "<leader><space>", "<Cmd>Telescope buffers<CR>",     desc = "Find existing buffers" },
-		{ "<leader>sf",      "<Cmd>Telescope find_files<CR>",  desc = "Search Files" },
-		{ "<leader>sh",      "<Cmd>Telescope help_tags<CR>",   desc = "Search Help" },
-		{ "<leader>sw",      "<Cmd>Telescope grep_string<CR>", desc = "Search current Word" },
-		{ "<leader>sg",      "<Cmd>Telescope live_grep<CR>",   desc = "Search by Grep" },
-		{ "<leader>sd",      "<Cmd>Telescope diagnostics<CR>", desc = "Search Diagnostics" },
-		{ "<leader>sc",      "<Cmd>Telescope colorscheme<CR>", desc = "Search Colorscheme" },
+		{ "<leader>?",       "<Cmd>Telescope oldfiles<CR>",               desc = "Find recently opened files" },
+		{ "<leader><space>", "<Cmd>Telescope buffers<CR>",                desc = "Find existing buffers" },
+		{ "<leader>sf",      "<Cmd>Telescope find_files<CR>",             desc = "Search Files" },
+		{ "<leader>sh",      "<Cmd>Telescope help_tags<CR>",              desc = "Search Help" },
+		{ "<leader>s.",      "<Cmd>Telescope find_files hidden=true<CR>", desc = "Search Hidden Files" },
+		{ "<leader>sw",      "<Cmd>Telescope grep_string<CR>",            desc = "Search current Word" },
+		{ "<leader>sg",      "<Cmd>Telescope live_grep<CR>",              desc = "Search by Grep" },
+		{ "<leader>sd",      "<Cmd>Telescope diagnostics<CR>",            desc = "Search Diagnostics" },
+		{ "<leader>sc",      "<Cmd>Telescope colorscheme<CR>",            desc = "Search Colorscheme" },
 		{
 			"<leader>/",
 			function()
