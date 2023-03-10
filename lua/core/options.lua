@@ -2,7 +2,7 @@ vim.o.encoding = "utf-8"
 vim.o.clipboard = "unnamedplus"
 
 vim.o.termguicolors = true
-vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20" -- display cursor as single line when in insert mode
+vim.o.guicursor = require("core.global").cursor_style
 
 vim.o.number = true
 vim.o.relativenumber = true
