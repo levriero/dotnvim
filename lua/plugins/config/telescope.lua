@@ -13,6 +13,11 @@ return function()
 					["<C-u>"] = false,
 					["<C-d>"] = require("telescope.actions").delete_buffer,
 				},
+			},
+		},
+		pickers = {
+			find_files = {
+				theme = "dropdown",
 			}
 		},
 	}
