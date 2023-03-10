@@ -8,6 +8,11 @@ table.insert(M, {
 })
 
 table.insert(M, {
+	"numToStr/FTerm.nvim",
+	config = require("plugins.config.fterm")
+})
+
+table.insert(M, {
 	'rose-pine/neovim',
 	name = 'rose-pine',
 	lazy = false,
@@ -137,28 +142,6 @@ table.insert(M, {
 	"nvim-lualine/lualine.nvim",
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("plugins.config.lualine")
-})
-
-table.insert(M, {
-	"akinsho/toggleterm.nvim",
-	cmd = {
-		"ToggleTerm",
-		"ToggleTermSetName",
-		"ToggleTermToggleAll",
-		"ToggleTermSendVisualLines",
-		"ToggleTermSendCurrentLine",
-		"ToggleTermSendVisualSelection",
-	},
-	keys = {
-		{ "<C-t>", "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
-		{ "<leader>g", function()
-			local Terminal = require("toggleterm.terminal").Terminal
-			local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-
-			lazygit:toggle()
-		end, desc = "Toggle Terminal with Lazygit" }
-	},
-	config = require("plugins.config.toggleterm")
 })
 
 table.insert(M, {

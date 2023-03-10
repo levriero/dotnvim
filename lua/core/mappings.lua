@@ -37,3 +37,7 @@ nmap("<leader>tv", "<Cmd>TestVisit<CR>", "Test Visit")
 
 -- Neotree
 nmap("<leader>e", "<Cmd>Neotree float reveal<cr>", "Toggle Neotree in floating window")
+
+-- FTerm
+vim.api.nvim_set_keymap("n", "<C-t>", '<Cmd>lua require("FTerm").toggle()<CR>', { desc = "Toggle Terminal" })
+vim.api.nvim_set_keymap("t", "<C-t>", '<C-\\><C-n><Cmd>lua require("FTerm").toggle()<CR>', { desc = "Toggle Terminal" })
