@@ -3,13 +3,11 @@ return function()
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
 	}
 
-	local catppuccin = require("modules.utils.lualine.colors")
-
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
 			globalstatus = true,
-			theme = catppuccin,
+			theme = 'rose-pine',
 			disabled_filetypes = {},
 			component_separators = "|",
 			section_separators = { left = "", right = "" },

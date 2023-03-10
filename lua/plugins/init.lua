@@ -9,6 +9,12 @@ table.insert(M, {
 
 table.insert(M, { "ellisonleao/gruvbox.nvim", })
 table.insert(M, { "folke/tokyonight.nvim" })
+table.insert(M, {
+	'rose-pine/neovim',
+	name = 'rose-pine',
+	lazy = false,
+	config = require("plugins.config.rose-pine")
+})
 
 table.insert(M, {
 	"neovim/nvim-lspconfig",

@@ -77,7 +77,7 @@ local load_core = function()
 	require("core.plugins")
 
 	vim.api.nvim_command("set background=dark")
-	vim.api.nvim_command("colorscheme catppuccin")
+	vim.api.nvim_command("colorscheme rose-pine")
 end
 
 load_core()
