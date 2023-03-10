@@ -113,11 +113,7 @@ table.insert(M, {
 table.insert(M, {
 	"j-hui/fidget.nvim",
 	event = "BufReadPost",
-	opts = {
-		window = {
-			blend = 0
-		},
-	}
+	config = true,
 })
 
 table.insert(M, {
