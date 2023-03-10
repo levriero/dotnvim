@@ -18,6 +18,7 @@ return function()
 		pickers = {
 			find_files = {
 				theme = "dropdown",
+				previewer = false
 			}
 		},
 	}

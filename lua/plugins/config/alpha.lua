@@ -41,7 +41,7 @@ return function()
 	dashboard.section.header.opts.hl = "Boolean"
 
 	dashboard.section.buttons.val = {
-		dashboard.button("space s f", icons.documents.FileTree .. "Search files", "<cmd>Telescope find_files previewer=false<cr>"),
+		dashboard.button("space s f", icons.documents.FileTree .. "Search files", "<cmd>Telescope find_files<cr>"),
 		dashboard.button("space s g", icons.ui.Search .. "Search text", "<cmd>Telescope live_grep<cr>"),
 		dashboard.button("space s h", icons.misc.ManUp .. "Search help", "<cmd>Telescope oldfiles<cr>"),
 		dashboard.button("space ?", icons.ui.History .. "Search history", "<cmd>Telescope oldfiles<cr>"),
