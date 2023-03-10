@@ -29,3 +29,5 @@ vim.o.showmode = false
 vim.o.wrap = false
 
 vim.o.cursorline = true
+
+vim.o.fillchars = "eob: " -- hide indicators for empty lines at the end of a buffer
