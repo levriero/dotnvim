@@ -1,4 +1,7 @@
 return function()
+	-- NOTE: neodev must be setup before lspconfig
+	require("neodev").setup()
+
 	local nvim_lsp = require("lspconfig")
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")

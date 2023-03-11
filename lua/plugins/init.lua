@@ -25,6 +25,7 @@ table.insert(M, {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"folke/neodev.nvim",
 	},
 	config = require("plugins.config.lsp")
 })
