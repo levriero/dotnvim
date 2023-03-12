@@ -1,6 +1,7 @@
 return function()
 	local icons = {
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
+		git = require("modules.utils.icons").get("git", true),
 	}
 
 	require("lualine").setup({
@@ -9,14 +10,32 @@ return function()
 			globalstatus = true,
 			theme = 'rose-pine',
 			disabled_filetypes = {},
-			component_separators = "|",
+			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "", right = "" } } },
+			lualine_a = {
+				{
+					"mode",
+					separator = { left = "", right = "" },
+					fmt = function()
+						return " "
+					end
+				}
+			},
 			lualine_b = {
-				{ "branch" },
-				{ "diff" }
+				{
+					"branch",
+					icon = icons.git.Branch,
+				},
+				{
+					"diff",
+					symbols = {
+						added = icons.git.Add,
+						modified = icons.git.Mod_alt,
+						removed = icons.git.Remove,
+					},
+				},
 			},
 			lualine_c = {
 				{ "filename", file_status = true, path = 1 }
