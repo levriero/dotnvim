@@ -41,3 +41,8 @@ nmap("<leader>e", "<Cmd>Neotree float reveal<cr>", "Toggle Neotree in floating w
 -- FTerm
 vim.api.nvim_set_keymap("n", "<C-t>", '<Cmd>lua require("FTerm").toggle()<CR>', { desc = "Toggle Terminal" })
 vim.api.nvim_set_keymap("t", "<C-t>", '<C-\\><C-n><Cmd>lua require("FTerm").toggle()<CR>', { desc = "Toggle Terminal" })
+
+-- Treesitter Playground
+nmap("<leader>pt", "<Cmd>TSPlaygroundToggle<CR>", "Toggle Treesitter Playground")
+nmap("<leader>ph", "<Cmd>TSHighlightCapturesUnderCursor<CR>", "Treesitter: Highlight groups under cursor")
+nmap("<leader>pn", "<Cmd>TSNodeUnderCursor<CR>", "Treesitter: Node under cursor")
