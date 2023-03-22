@@ -52,6 +52,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 			-- See `:h fo-table`
 			vim.o.formatoptions = "l"
+
+			-- Enable spell checking
+			vim.o.spell = true
+			vim.o.spelllang = "en"
 		end)
 	end
 })

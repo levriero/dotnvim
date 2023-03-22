@@ -109,7 +109,8 @@ return function()
 	-- Ensure the following servers are installed
 	mason_lspconfig.setup({
 		ensure_installed = {
-			"lua_ls"
+			"lua_ls",
+			"marksman"
 		}
 	})
 
