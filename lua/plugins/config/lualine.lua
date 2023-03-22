@@ -8,21 +8,13 @@ return function()
 		options = {
 			icons_enabled = true,
 			globalstatus = true,
-			theme = 'rose-pine',
+			theme = 'tokyonight',
 			disabled_filetypes = {},
 			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = {
-				{
-					"mode",
-					separator = { left = "", right = "" },
-					fmt = function()
-						return " "
-					end
-				}
-			},
+			lualine_a = {},
 			lualine_b = {
 				{
 					"branch",

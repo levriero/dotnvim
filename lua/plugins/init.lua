@@ -3,20 +3,29 @@ local M = {}
 table.insert(M, {
 	"catppuccin/nvim",
 	name = "catppuccin",
-	lazy = false,
 	config = require("plugins.config.catppuccin")
+})
+
+table.insert(M, {
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = require("plugins.config.rose-pine")
+})
+
+table.insert(M, {
+	"folke/tokyonight.nvim",
+	name = "tokyonight",
+	lazy = false,
+	opts = {
+		styles = {
+			floats = "transparent"
+		}
+	},
 })
 
 table.insert(M, {
 	"numToStr/FTerm.nvim",
 	config = require("plugins.config.fterm")
-})
-
-table.insert(M, {
-	'rose-pine/neovim',
-	name = 'rose-pine',
-	lazy = false,
-	config = require("plugins.config.rose-pine")
 })
 
 table.insert(M, {
@@ -187,9 +196,16 @@ table.insert(M, {
 	"folke/zen-mode.nvim",
 	cmd = "ZenMode",
 	opts = {
+		window = {
+			backdrop = 1,
+		},
 		plugins = {
 			gitsigns = true,
-		}
+			alacritty = {
+				enabled = true,
+				font = "22"
+			},
+		},
 	},
 	keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
 })
@@ -210,7 +226,7 @@ table.insert(M, {
 		vim.g.neo_tree_remove_legacy_commands = 1
 	end,
 	opts = {
-		popup_border_style = 'single',
+		popup_border_style = "single",
 		filesystem = {
 			follow_current_file = true
 		}
