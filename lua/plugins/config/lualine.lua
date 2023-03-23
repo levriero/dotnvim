@@ -11,7 +11,7 @@ return function()
 			theme = 'tokyonight',
 			disabled_filetypes = {},
 			component_separators = "",
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_a = {},
@@ -47,7 +47,7 @@ return function()
 				{ "filetype", colored = true, icon_only = true },
 				{ "progress" }
 			},
-			lualine_z = { { "location", separator = { left = "", right = "" } } },
+			lualine_z = { { "location", separator = { left = "", right = "" } } },
 		}
 	})
 end
