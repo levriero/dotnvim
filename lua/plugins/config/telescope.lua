@@ -14,6 +14,9 @@ return function()
 					["<C-d>"] = require("telescope.actions").delete_buffer,
 				},
 			},
+			file_ignore_patterns = {
+				"vendor/assets"
+			}
 		},
 		pickers = {
 			find_files = {
