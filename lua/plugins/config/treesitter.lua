@@ -8,7 +8,6 @@ return function()
 			"diff",
 			"fish",
 			"go",
-			"help",
 			"html",
 			"javascript",
 			"json",
@@ -17,6 +16,7 @@ return function()
 			"markdown_inline",
 			"ruby",
 			"vim",
+			"vimdoc",
 			"yaml",
 		},
 		-- Install parsers synchronously (only applied to `ensure_installed`)
