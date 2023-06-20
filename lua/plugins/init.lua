@@ -125,6 +125,7 @@ table.insert(M, {
 	"j-hui/fidget.nvim",
 	event = "BufReadPost",
 	config = true,
+	tag = "legacy" -- https://github.com/j-hui/fidget.nvim/commit/c93c07c219bcf78c26b144027fcfd20cd23e55bd
 })
 
 table.insert(M, {
