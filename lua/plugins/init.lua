@@ -64,7 +64,6 @@ table.insert(M, {
 	build = ":TSUpdate",
 	event = { "CursorHold", "CursorHoldI" },
 	dependencies = {
-		"nvim-treesitter/playground",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		"RRethy/nvim-treesitter-endwise",
 	},
@@ -221,15 +220,14 @@ table.insert(M, { "MunifTanjim/nui.nvim" })
 
 table.insert(M, {
 	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
 	cmd = "Neotree",
-	init = function()
-		-- remove the deprecated commands from v1.x
-		vim.g.neo_tree_remove_legacy_commands = 1
-	end,
 	opts = {
 		popup_border_style = "single",
 		filesystem = {
-			follow_current_file = true
+			follow_current_file = {
+				enabled = true
+			}
 		}
 	}
 })
