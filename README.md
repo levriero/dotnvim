@@ -1,6 +1,8 @@
 Neovim configuration
 ===
 
+![dotnvim_preview](https://github.com/levriero/dotnvim/assets/807237/81ac0b70-662a-4494-9ecb-52a8fb1292b3)
+
 # Pre-requisites
 
 - [Neovim](https://github.com/neovim/neovim/releases/tag/v0.9.0) `0.9.0`
