@@ -109,8 +109,12 @@ return function()
 	-- Ensure the following servers are installed
 	mason_lspconfig.setup({
 		ensure_installed = {
+			"bashls",
+			"gopls",
+			"jsonls",
 			"lua_ls",
-			"marksman"
+			"marksman",
+			"solargraph"
 		}
 	})
 
