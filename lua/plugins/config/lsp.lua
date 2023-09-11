@@ -5,6 +5,7 @@ return function()
 	local nvim_lsp = require("lspconfig")
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
+
 	local icons = {
 		ui = require("modules.utils.icons").get("ui", true),
 		misc = require("modules.utils.icons").get("misc", true),
@@ -114,7 +115,6 @@ return function()
 			"jsonls",
 			"lua_ls",
 			"marksman",
-			"solargraph"
 		}
 	})
 
@@ -129,6 +129,7 @@ return function()
 				handlers = opts.handlers,
 			})
 		end,
+
 		lua_ls = function()
 			local _opts = {
 				settings = {
@@ -152,6 +153,13 @@ return function()
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
 
 			nvim_lsp.lua_ls.setup(final_opts)
-		end
+		end,
+	})
+
+	-- Custom server setup
+	nvim_lsp.solargraph.setup({
+		capabilities = opts.capabilities,
+		on_attach = opts.on_attach,
+		handlers = opts.handlers,
 	})
 end
