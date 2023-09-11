@@ -1,7 +1,7 @@
 Neovim configuration
 ===
 
-![dotnvim_preview](https://github.com/levriero/dotnvim/assets/807237/81ac0b70-662a-4494-9ecb-52a8fb1292b3)
+![dotnvim_preview](https://github-production-user-asset-6210df.s3.amazonaws.com/807237/267065019-d745cfe6-f5ad-46a9-8749-72b8c5459a36.png)
 
 # Pre-requisites
 
