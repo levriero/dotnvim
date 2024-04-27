@@ -1,8 +1,4 @@
 return function()
-	local icons = {
-		ui = require("modules.utils.icons").get("ui"),
-		misc = require("modules.utils.icons").get("misc"),
-	}
 	require("which-key").setup({
 		plugins = {
 			presets = {
@@ -14,11 +10,6 @@ return function()
 				z = true, -- bindings for folds, spelling and others prefixed with z
 				g = true, -- bindings for prefixed with g
 			},
-		},
-		icons = {
-			breadcrumb = icons.ui.Separator,
-			separator = icons.misc.Vbar,
-			group = icons.misc.Add,
 		},
 	})
 end
