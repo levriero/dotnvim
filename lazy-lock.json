@@ -30,7 +30,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "80b4fa7970ee159e5c2c715bbcd386143c48dcb1" },
   "nvim-treesitter-endwise": { "branch": "master", "commit": "9298b3ac8fd6d0d8f9e321194c6d3fd37e417cf9" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "bd103502252027434ec42f628d2dbf54821d4ce6" },
-  "nvim-web-devicons": { "branch": "master", "commit": "bc11ee2498de2310de5776477dd9dce65d03b464" },
+  "nvim-web-devicons": { "branch": "master", "commit": "beb6367ab8496c9e43f22e0252735fdadae1872d" },
   "plenary.nvim": { "branch": "master", "commit": "0dbe561ae023f02c2fb772b879e905055b939ce3" },
   "rose-pine": { "branch": "main", "commit": "e29002cbee4854a9c8c4b148d8a52fae3176070f" },
   "smartyank.nvim": { "branch": "master", "commit": "7e3905578f646503525b2f7018b8afd17861018c" },

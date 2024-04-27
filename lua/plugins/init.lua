@@ -71,12 +71,15 @@ table.insert(M, {
 })
 
 table.insert(M, {
+	"nvim-tree/nvim-web-devicons",
+})
+
+table.insert(M, {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
 	},
 	-- See `:help telescope.builtin`
