@@ -6,7 +6,7 @@ return function()
 		ui = require("modules.utils.icons").get("ui", true),
 	}
 
-	dashboard.section.header.val = require("modules.utils.ascii_art").bubbletea
+	dashboard.section.header.val = require("modules.utils.ascii_art").sharp
 	dashboard.section.header.opts.hl = "Boolean"
 
 	dashboard.section.buttons.val = {
