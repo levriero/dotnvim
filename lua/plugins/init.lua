@@ -203,11 +203,7 @@ table.insert(M, {
 			backdrop = 1,
 		},
 		plugins = {
-			gitsigns = true,
-			alacritty = {
-				enabled = true,
-				font = "22"
-			},
+			gitsigns = { enabled = false }, -- disables git signs
 		},
 	},
 	keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
