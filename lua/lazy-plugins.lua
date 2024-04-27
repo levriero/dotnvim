@@ -1,10 +1,9 @@
 -- [[ Configure and install plugins ]]
 require("lazy").setup({
 	require("plugins/tokyonight"),
+	require("plugins/treesitter"),
 
 	require("plugins/which-key"),
-
-	require("plugins/telescope"),
 
 	require("plugins/gitsigns"),
 
@@ -13,10 +12,15 @@ require("lazy").setup({
 
 	require("plugins/todo-comments"),
 
-	require("plugins/cmp"),
+	require("plugins/telescope"),
 	require("plugins/lspconfig"),
+	require("plugins/cmp"),
+
 	require("plugins/conform"),
-	require("plugins/treesitter"),
+
+	require("plugins/mini"),
+
+	require("plugins/lualine"),
 })
 
 -- vim: ts=2 sts=2 sw=2 et
