@@ -23,6 +23,8 @@ require("lazy").setup({
 	require("plugins/lualine"),
 
 	require("plugins/neo-tree"),
+
+	require("plugins/dashboard"),
 })
 
 -- vim: ts=2 sts=2 sw=2 et
