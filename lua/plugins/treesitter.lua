@@ -1,5 +1,5 @@
 return {
-	{
+	{ -- Syntax tree parser
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {

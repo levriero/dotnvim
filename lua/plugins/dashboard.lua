@@ -1,5 +1,5 @@
 return {
-	{
+	{ -- Start screen
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
 		config = function()
@@ -19,18 +19,6 @@ return {
 							action = "Telescope find_files",
 							key = "f",
 						},
-						-- {
-						-- 	desc = " Apps",
-						-- 	group = "DiagnosticHint",
-						-- 	action = "Telescope app",
-						-- 	key = "a",
-						-- },
-						-- {
-						-- 	desc = " dotfiles",
-						-- 	group = "Number",
-						-- 	action = "Telescope dotfiles",
-						-- 	key = "d",
-						-- },
 					},
 				},
 			})
@@ -38,3 +26,4 @@ return {
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 }
+-- vim: ts=2 sts=2 sw=2 et
