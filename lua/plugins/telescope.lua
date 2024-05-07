@@ -19,9 +19,7 @@ return {
 				end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
-
-			-- Useful for getting pretty icons, but requires a Nerd Font.
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons" },
 		},
 		config = function()
 			-- [[ Configure Telescope ]]
@@ -32,7 +30,12 @@ return {
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
-				-- pickers = {}
+				pickers = {
+					find_files = {
+						-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+						find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
