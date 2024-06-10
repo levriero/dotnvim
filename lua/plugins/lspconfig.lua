@@ -158,6 +158,9 @@ return {
 						},
 					},
 				},
+
+				-- gem install ruby-lsp
+				ruby_lsp = {},
 			}
 
 			-- Ensure the servers and tools above are installed
